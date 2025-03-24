@@ -30,6 +30,35 @@ const authorData = `{
   "numberOfPosts": count(*[_type == "post" && references(^._id)])
 }`;
 
+export const companyQueryBySlug = groq`
+  *[_type == "company" && slug.current == $slug][0]{
+    companyName,
+    metaTitle,
+    metaDescription,
+    phoneNumber,
+    emailAddress,
+    slug,
+    body,
+    city
+  }
+`;
+
+export const companyQueryByCity = groq`
+  *[_type == "company" && lower(city) == lower($city)] {
+    _id,
+    companyName,
+    metaTitle,
+    metaDescription,
+    phoneNumber,
+    emailAddress,
+    slug,
+    body,
+    city,
+    mainImage
+  }
+`;
+
+
 export const postQuery = groq`*[_type == "post"] ${postData}`;
 
 export const postQueryBySlug = groq`*[_type == "post" && slug.current == $slug][0] ${postData}`;

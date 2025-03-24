@@ -8,6 +8,7 @@ import Filter from "@/components/Filter";
 import Avantaje from "@/components/Avantaje";
 import Servicii from "@/components/Servicii";
 import CallToAction from "@/components/Common/CallToAction";
+import SearchPageFilter from "@/components/SearchPageFilter";
 
 export const metadata: Metadata = {
   title: "NextBlog - Next.js Blog Template",
@@ -15,14 +16,11 @@ export const metadata: Metadata = {
   // other metaDescription
 };
 
-export default function Home() {
+export default function AmenajariGradiniPage() {
   return (
     <>
-      <Filter/>
-      {/* <Hero /> */}
-      {/* <Category /> */}
-      <Avantaje />
-      <Servicii />
+      <SearchPageFilter/>
+
       <CallToAction />
     </>
   );
