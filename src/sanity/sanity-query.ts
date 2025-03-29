@@ -37,6 +37,7 @@ export const companyQueryBySlug = groq`
     metaDescription,
     phoneNumber,
     emailAddress,
+    companySlug,
     slug,
     body,
     city
@@ -51,6 +52,7 @@ export const companyQueryByCity = groq`
     metaDescription,
     phoneNumber,
     emailAddress,
+    companySlug,
     slug,
     body,
     city,
@@ -58,6 +60,20 @@ export const companyQueryByCity = groq`
   }
 `;
 
+export const companyQueryByCompanySlug = groq`
+  *[_type == "company" && companySlug.current == $companySlug][0]{
+    companyName,
+    metaTitle,
+    metaDescription,
+    phoneNumber,
+    emailAddress,
+    companySlug,
+    slug, // slug-ul pentru oraș, dacă ai nevoie de el
+    body,
+    city,
+    mainImage
+  }
+`;
 
 export const postQuery = groq`*[_type == "post"] ${postData}`;
 

@@ -1,3 +1,4 @@
+import CallToAction from "@/components/Common/CallToAction";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -144,6 +145,7 @@ const PrivacyPolicyPage = () => {
           </div>
         </div>
       </section>
+      <CallToAction/>
     </main>
   );
 };

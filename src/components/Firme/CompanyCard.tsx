@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Phone, Mail, MapPin, ArrowRight, Info } from 'lucide-react';
 import { imageBuilder } from "@/sanity/sanity-utils";
 import { Company } from "@/types/firme";
+import RevealPhoneButton from "../Common/RevealPhoneButton";
 
 type CompanyCardProps = {
   company: Company;
@@ -29,7 +30,7 @@ export default function CompanyCard({ company, index }: CompanyCardProps) {
         </div>
 
         <Link 
-          href={`/firma/${company.slug?.current || ''}`}
+          href={`/firma/${company?.companySlug?.current || ''}`}
           className="flex items-center justify-center gap-2 bg-transparent border border-white text-white rounded-md py-3 px-4 w-full mt-4 hover:bg-white/10 transition-colors"
         >
           Vezi Detalii Firma <Info className="w-4 h-4" />
@@ -48,23 +49,9 @@ export default function CompanyCard({ company, index }: CompanyCardProps) {
             </div>
           </div>
 
-          <div className="flex items-start gap-2 mb-4">
-            <Phone className="text-dark mt-1 flex-shrink-0" />
-            <div>
-              <p className="text-gray-800">
-                Contact: 
-                <a 
-                  href={`tel:${company.phoneNumber}`} 
-                  className="ml-1 text-dark hover:underline"
-                  aria-label={`Sună la ${company.companyName}`}
-                >
-                  {company.phoneNumber}
-                </a>
-              </p>
-            </div>
-          </div>
 
-          <div className="flex items-start gap-2">
+
+          <div className="flex items-start gap-2 mb-4">
             <Mail className="text-dark mt-1 flex-shrink-0" />
             <div>
               <p className="text-gray-800">
@@ -79,6 +66,10 @@ export default function CompanyCard({ company, index }: CompanyCardProps) {
               </p>
             </div>
           </div>
+
+       
+          <RevealPhoneButton fullPhone={company.phoneNumber} />
+        
         </div>
 
         <div className="mt-4">

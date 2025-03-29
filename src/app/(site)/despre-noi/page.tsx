@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import Authors from "@/components/Home/Authors";
 import NewsletterSignup from "@/components/Common/NewsletterSignup";
 import Image from "next/image";
+import CallToAction from "@/components/Common/CallToAction";
 
 export const metadata: Metadata = {
   title: "About | NextBlog - Next.js Blog Template",
@@ -47,8 +48,8 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <Authors />
-      <NewsletterSignup />
+      {/* <Authors /> */}
+      <CallToAction />
     </main>
   );
 };

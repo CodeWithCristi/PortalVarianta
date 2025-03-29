@@ -8,37 +8,39 @@ import Link from "next/link";
 import { Company } from "@/types/firme";
 import CompanyCardList from "@/components/Firme/CompanyCardList";
 import CompanyBottomCTA from "@/components/Firme/CompanyBottomCTA";
+import CallToAction from "@/components/Common/CallToAction";
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
-export async function generateMetadata({ params }: Props) {
-  const { slug } = await params;
+export async function generateMetadata(props: Props) {
+  const params = await props.params;
+
   const prefix = "amenajari-gradini-";
-  const city = slug.startsWith(prefix) ? slug.replace(prefix, "") : slug;
+  const city = params.slug.startsWith(prefix) ? params.slug.replace(prefix, "") : slug;
   const siteURL = process.env.SITE_URL;
 
   return {
     title: `Firme de amenajări grădini în ${city.charAt(0).toUpperCase() + city.slice(1)}`,
     description: `Aici poți găsi firme specializate în amenajări grădini din ${city.charAt(0).toUpperCase() + city.slice(1)}.`,
     alternates: {
-      canonical: `${siteURL}/${slug}`,
+      canonical: `${siteURL}/${params.slug}`,
     },
     robots: { index: true, follow: true },
     openGraph: {
       title: `Firme de amenajări grădini în ${city.charAt(0).toUpperCase() + city.slice(1)}`,
       description: `Aici poți găsi firme specializate în amenajări grădini din ${city.charAt(0).toUpperCase() + city.slice(1)}.`,
-      url: `${siteURL}/${slug}`,
+      url: `${siteURL}/${params.slug}`,
       type: "website",
     },
   };
 }
 
-const CompaniesByCity = async ({ params }: Props) => {
-  const { slug } = await params;
+const CompaniesByCity = async (props: Props) => {
+  const params = await props.params;
   const prefix = "amenajari-gradini-";
-  const city = slug.startsWith(prefix) ? slug.replace(prefix, "") : slug;
+  const city = params.slug.startsWith(prefix) ? params.slug.replace(prefix, "") : slug;
   const companies: Company[] = await getCompaniesByCity(city);
 
   return (
@@ -85,8 +87,9 @@ const CompaniesByCity = async ({ params }: Props) => {
             ))}
           </div>
         </div>
-        <NewsletterSignup />
+    
       </section>
+      <CallToAction />
     </main>
   );
 };

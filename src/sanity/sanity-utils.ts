@@ -11,6 +11,7 @@ import {
   postQueryBySlug,
   getPrevAndNextPostQuery,
   companyQueryByCity,
+  companyQueryByCompanySlug,
 } from "./sanity-query";
 
 import { Blog } from "@/types/blog";
@@ -104,6 +105,16 @@ export async function getPost(slug: string) {
   });
   return data;
 }
+
+export async function getCompanyByCompanySlug(companySlug: string) {
+  const data: Company = await sanityFetch({
+    query: companyQueryByCompanySlug,
+    qParams: { companySlug },
+    tags: ["company"],
+  });
+  return data;
+}
+
 
 export async function getPostsByTag(slug: string) {
   const data: Blog[] = await sanityFetch({

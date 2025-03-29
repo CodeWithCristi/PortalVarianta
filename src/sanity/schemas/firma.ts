@@ -73,7 +73,7 @@ const firma = {
     },
     {
       name: "slug",
-      title: "Slug",
+      title: "Slug Pagina Oras",
       type: "slug",
       options: {
         source: (doc: any) => `amenajari-gradini-${doc.city}`,
@@ -92,6 +92,34 @@ const firma = {
           return true;
         }),
     },
+    {
+      name: "companySlug",
+      title: "Slug Nume Firma (Pagina agentie)",
+      type: "slug",
+      options: {
+        // Folosește companyName ca sursă pentru slug
+        source: (doc: any) => doc.companyName,
+        unique: true,
+        // Funcția slugify: transformă în litere mici, elimină spațiile inutile și înlocuiește spațiile cu cratime
+        slugify: (input: string) =>
+          input
+            .toLowerCase()
+            .trim()
+            .replace(/\s+/g, "-")
+            .replace(/[^\w-]+/g, ""),
+      },
+      validation: (Rule: Rule) =>
+        Rule.required().custom((fields: any) => {
+          if (
+            fields?.current !== fields?.current?.toLowerCase() ||
+            fields?.current.split(" ").includes("")
+          ) {
+            return "Slug trebuie să fie în litere mici și fără spații";
+          }
+          return true;
+        }),
+    },
+    
     {
       name: "mainImage",
       title: "Main image",
