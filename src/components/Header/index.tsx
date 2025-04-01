@@ -164,7 +164,7 @@ const Header = () => {
                   <div className="group relative">
       
                       <Link
-                        href={"/contact"}
+                        href={"/inscrie-firma"}
                         className="flex rounded-md bg-dark px-5.5 py-2.5 font-medium text-white hover:opacity-90 lg:transition-all lg:duration-200 lg:ease-linear"
                       >
                         Înscrie firmă

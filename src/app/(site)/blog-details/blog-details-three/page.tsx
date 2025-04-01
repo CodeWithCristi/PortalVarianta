@@ -148,7 +148,7 @@ const BlogDetailsThree = async () => {
                   </div>
 
                   <div className="blog-details blog-details-three mt-9">
-                    <RenderBodyContent post={post as any} />
+                    {/* <RenderBodyContent post={post as any} /> */}
                   </div>
 
                   <div className="mb-10 mt-15 flex flex-wrap items-center justify-between gap-y-2">

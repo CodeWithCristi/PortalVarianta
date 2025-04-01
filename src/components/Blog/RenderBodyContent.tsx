@@ -4,6 +4,7 @@ import { getImageDimensions } from "@sanity/asset-utils";
 import urlBuilder from "@sanity/image-url";
 import Image from "next/image";
 import { Blog } from "@/types/blog";
+import { Company } from "@/types/firme";
 
 // Barebones lazy-loaded image component
 const SampleImageComponent = ({ value, isInline }: any) => {
@@ -33,10 +34,10 @@ const components = {
   },
 };
 
-const RenderBodyContent = ({ post }: { post: Blog }) => {
+const RenderBodyContent = ({ company }: { company: Company }) => {
   return (
     <>
-      <PortableText value={post?.body || []} components={components} />
+      <PortableText value={company?.body || []} components={components} />
     </>
   );
 };

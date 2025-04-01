@@ -32,7 +32,7 @@ export async function generateMetadata(props: Props) {
       description: `${company.metaDescription.slice(0, 136)}...`,
       author: company.companyName,
       alternates: {
-        canonical: `${siteURL}/firma/${company.companySlug.current}`,
+        canonical: `${siteURL}/firme/${company.companySlug.current}`,
         languages: {
           "ro-RO": "/ro-RO",
         },
@@ -52,7 +52,7 @@ export async function generateMetadata(props: Props) {
       openGraph: {
         title: `${company.companyName} | Promovare Firme`,
         description: company.metaDescription,
-        url: `${siteURL}/firma/${company.companySlug.current}`,
+        url: `${siteURL}/firme/${company.companySlug.current}`,
         siteName: "Promovare Firme",
         images: [
           {
@@ -72,7 +72,7 @@ export async function generateMetadata(props: Props) {
         creator: "@PromovareFirme",
         site: "@PromovareFirme",
         images: [imageBuilder(company.mainImage).url()],
-        url: `${siteURL}/firma/${company.companySlug.current}`,
+        url: `${siteURL}/firme/${company.companySlug.current}`,
       },
     };
   } else {
@@ -83,7 +83,7 @@ export async function generateMetadata(props: Props) {
   }
 }
 
-const BlogDetails = async (props: Props) => {
+const FirmePage = async (props: Props) => {
   // const params = await props.params;
   // const { slug } = params;
   // const post: Blog = await getPost(slug);
@@ -97,7 +97,7 @@ const BlogDetails = async (props: Props) => {
   //   type: "company",
   //   title: company.companyName || "",
   //   htmlString: company.metaDescription || "",
-  //   pageUrl: `${process.env.SITE_URL}/firma/${company.companySlug.current}`,
+  //   pageUrl: `${process.env.SITE_URL}/firme/${company.companySlug.current}`,
   //   imageURL: imageBuilder(company.mainImage).url()!,
   // });
 
@@ -117,7 +117,7 @@ const BlogDetails = async (props: Props) => {
           <div className="mx-auto max-w-[770px] border-t border-gray-3">
         
             <div className="blog-details blog-details-one pt-8">
-              <RenderBodyContent post={company} />
+              <RenderBodyContent company={company} />
             </div>
 
             {/* <!-- Blog Show More BTN --> */}
@@ -139,4 +139,4 @@ const BlogDetails = async (props: Props) => {
   );
 };
 
-export default BlogDetails;
+export default FirmePage;

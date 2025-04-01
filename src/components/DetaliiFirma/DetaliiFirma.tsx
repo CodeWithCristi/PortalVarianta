@@ -22,20 +22,22 @@ const firmaData = {
     website: "#",
   },
 }
-
+interface FirmaProfileProps {
+  company: Company;
+}
 
 export default function FirmaProfile(company: Company) {
-
+  console.log("company.company...///", company);
   return (
     <div className="w-full max-w-4xl mx-auto pb-8">
       <div className="flex flex-col md:flex-row gap-8 items-start">
         {/* Profile image - larger circular image */}
       <div className="w-full max-w-[280px] mx-auto md:mx-0">
           <div className="aspect-square rounded-full overflow-hidden border-2 border-gray-100 shadow-md">
-          {company.mainImage && (
+          {company.company.mainImage && (
             <Image
-              src={imageBuilder(company.mainImage).url()}
-              alt={`${company.companyName} - Specialiști în Amenajari gradini`}
+              src={imageBuilder(company.company.mainImage).url()}
+              alt={`${company.company.companyName} - Specialiști în Amenajari gradini`}
               width={280}
               height={280}
               className="w-full h-full object-cover"
@@ -83,7 +85,7 @@ export default function FirmaProfile(company: Company) {
             <Leaf className="w-5 h-5 text-black flex-shrink-0" />
             <div>
               <span className="text-black font-medium">Specializari</span>
-              <span className="text-gray-700"> | {firmaData.specialization}</span>
+              <span className="text-gray-700"> | Amenajari Gradini</span>
             </div>
           </div>
 
@@ -92,14 +94,14 @@ export default function FirmaProfile(company: Company) {
             <MapPin className="w-5 h-5 text-black flex-shrink-0" />
             <div>
               <span className="font-medium text-gray-800">Adresă Firma:</span>
-              <span className="text-gray-700"> {firmaData.address}</span>
+              <span className="text-gray-700"> {company.company.city}</span>
             </div>
           </div>
 
           {/* Phone number with reveal button */}
    
 
-            <RevealPhoneButton fullPhone={company.phoneNumber} />
+            <RevealPhoneButton fullPhone={company.company.phoneNumber} />
 
      
         </div>

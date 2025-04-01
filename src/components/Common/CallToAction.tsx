@@ -1,54 +1,9 @@
 "use client";
-import axios from "axios";
-import { toast } from "react-hot-toast";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
-import Loader from "./Loader";
-import z from "zod";
-import { integrations, messages } from "../../../integrations.config";
-
-const schema = z.object({
-  email: z.string().email({ message: "Please enter a valid email address" }),
-});
+import Link from "next/link";
 
 const CallToAction = () => {
-  const [email, setEmail] = useState("");
-  const [loader, setLoader] = useState(false);
-
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
-
-    if (!integrations?.isMailchimpEnabled) {
-      toast.error(messages?.mailchimp);
-      return;
-    }
-
-    const result = schema.safeParse({ email });
-    if (!result.success) {
-      const firstError = result.error.errors[0]?.message;
-      toast.error(firstError);
-      return;
-    }
-
-    try {
-      setLoader(true);
-      const res = await axios.post("/api/newsletter", { email });
-
-      if (res.data.status == 400) {
-        toast.error(res.data?.title);
-        setEmail("");
-      } else {
-        toast.success("Thanks for signing up!");
-        setEmail("");
-      }
-
-      setLoader(false);
-    } catch (error: any) {
-      toast.error(error.response.data);
-      setLoader(false);
-    }
-  };
-
   return (
     <section className="relative z-10 overflow-hidden bg-gray py-12.5">
       <div className="absolute left-0 top-0 -z-1 h-full w-full">
@@ -64,31 +19,27 @@ const CallToAction = () => {
           <div className="flex flex-wrap items-center justify-between gap-10">
             <div className="w-full max-w-[555px]">
               <h3 className="mb-3 text-heading-6 font-semibold text-dark">
-              Vrei sa îți promovezi serviciile?
+                Vrei să îți promovezi serviciile?
               </h3>
               <p>
-              Contactează-ne și îți putem oferi o soluție personalizată pentru afacerea ta!
+                Contactează-ne și îți putem oferi o soluție personalizată pentru afacerea ta!
               </p>
             </div>
             <div className="w-full max-w-[394px]">
-              <form onSubmit={handleSubmit}>
-                <div className="flex items-center gap-5">
-                 
-                  <button
-                    type="submit"
-                    className="inline-flex justify-center rounded-md border border-dark px-7.5 py-3 font-medium text-dark duration-200 ease-in hover:bg-dark hover:text-white"
-                  >
-                    Caută firmă {loader && <Loader />}
-                  </button>
-                 
-                  <button
-                    type="submit"
-                    className="flex items-center justify-center rounded-md bg-dark px-5.5 py-3.5 font-medium text-white transition-all duration-300 ease-linear hover:opacity-90"
-                  >
-                    Înscrie firmă {loader && <Loader />}
-                  </button>
-                </div>
-              </form>
+              <div className="flex items-center gap-5">
+                <Link
+                  href="/cauta"
+                  className="inline-flex justify-center rounded-md border border-dark px-7.5 py-3 font-medium text-dark duration-200 ease-in hover:bg-dark hover:text-white"
+                >
+                  Caută firmă
+                </Link>
+                <Link
+                  href="/inscrie-firma"
+                  className="flex items-center justify-center rounded-md bg-dark px-5.5 py-3.5 font-medium text-white transition-all duration-300 ease-linear hover:opacity-90"
+                >
+                  Înscrie firmă
+                </Link>
+              </div>
             </div>
           </div>
         </div>

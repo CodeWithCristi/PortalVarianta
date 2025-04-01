@@ -8,6 +8,8 @@ import Filter from "@/components/Filter";
 import Avantaje from "@/components/Avantaje";
 import Servicii from "@/components/Servicii";
 import CallToAction from "@/components/Common/CallToAction";
+import MedicalInfoCard from "@/components/Common/MoreInfoCard";
+import InfoAddCompaniesBanner from "@/components/Common/InfoAddCompaniesBanner";
 
 export const metadata: Metadata = {
   title: "NextBlog - Next.js Blog Template",
@@ -23,6 +25,7 @@ export default function Home() {
       {/* <Category /> */}
       <Avantaje />
       <Servicii />
+      <InfoAddCompaniesBanner/>
       <CallToAction />
     </>
   );

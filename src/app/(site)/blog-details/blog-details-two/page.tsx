@@ -162,7 +162,7 @@ const BlogDetailsTwo = async () => {
             {integrations?.isSanityEnabled && (
               <div className="mx-auto max-w-[770px]">
                 <div className="blog-details blog-details-two">
-                  <RenderBodyContent post={post as Blog} />
+                  {/* <RenderBodyContent post={post as Blog} /> */}
                 </div>
 
                 {/* <!-- Author Details --> */}

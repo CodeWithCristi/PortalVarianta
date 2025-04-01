@@ -157,7 +157,7 @@ const BlogDetails = async (props: Props) => {
 
           <div className="mx-auto max-w-[770px]">
             <div className="blog-details blog-details-one">
-              <RenderBodyContent post={post} />
+              {/* <RenderBodyContent post={post} /> */}
             </div>
 
             {/* <!-- Blog Show More BTN --> */}

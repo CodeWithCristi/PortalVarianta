@@ -26,7 +26,7 @@ export function JsonLd({ companies, city }: JsonLdProps) {
           addressCountry: "RO",
         },
         image: company.mainImage ? company.mainImage : null,
-        url: `${process.env.SITE_URL}/firma/${company.slug?.current || ""}`,
+        url: `${process.env.SITE_URL}/firme/${company.slug?.current || ""}`,
         priceRange: "$$",
         serviceArea: {
           "@type": "GeoCircle",

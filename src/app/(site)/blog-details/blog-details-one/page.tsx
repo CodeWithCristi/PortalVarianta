@@ -145,7 +145,7 @@ const BlogDetailsOne = async () => {
             {integrations?.isSanityEnabled && (
               <div className="mx-auto max-w-[770px]">
                 <div className="blog-details blog-details-one">
-                  <RenderBodyContent post={post as any} />
+                  {/* <RenderBodyContent post={post as any} /> */}
                 </div>
 
                 {/* <!-- Blog Show More BTN --> */}

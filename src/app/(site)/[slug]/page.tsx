@@ -9,6 +9,7 @@ import { Company } from "@/types/firme";
 import CompanyCardList from "@/components/Firme/CompanyCardList";
 import CompanyBottomCTA from "@/components/Firme/CompanyBottomCTA";
 import CallToAction from "@/components/Common/CallToAction";
+import MoreInfoFirmePageBanner from "@/components/Common/MoreInfoFirmePageBanner";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -18,7 +19,7 @@ export async function generateMetadata(props: Props) {
   const params = await props.params;
 
   const prefix = "amenajari-gradini-";
-  const city = params.slug.startsWith(prefix) ? params.slug.replace(prefix, "") : slug;
+  const city = params.slug.startsWith(prefix) ? params.slug.replace(prefix, "") : params.slug;
   const siteURL = process.env.SITE_URL;
 
   return {
@@ -40,7 +41,7 @@ export async function generateMetadata(props: Props) {
 const CompaniesByCity = async (props: Props) => {
   const params = await props.params;
   const prefix = "amenajari-gradini-";
-  const city = params.slug.startsWith(prefix) ? params.slug.replace(prefix, "") : slug;
+  const city = params.slug.startsWith(prefix) ? params.slug.replace(prefix, "") : params.slug;
   const companies: Company[] = await getCompaniesByCity(city);
 
   return (
@@ -80,7 +81,7 @@ const CompaniesByCity = async (props: Props) => {
              
                 <div className="mx-auto max-w-[770px]">
                   <div className="blog-details blog-details-one">
-                    <RenderBodyContent post={company} />
+                    <RenderBodyContent company={company} />
                   </div>
                 </div>
               </article>
@@ -89,6 +90,8 @@ const CompaniesByCity = async (props: Props) => {
         </div>
     
       </section>
+      <div className="mx-auto max-w-[1030px] sm:px-8 xl:px-0 w-full h-px border-t border-gray-3"></div>
+      <MoreInfoFirmePageBanner />
       <CallToAction />
     </main>
   );

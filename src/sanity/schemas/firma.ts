@@ -149,14 +149,15 @@ const firma = {
       subtitle: "city",
       media: "mainImage",
     },
-    prepare(selection: { title: string; city?: string }) {
-      const { title, city } = selection;
+    prepare(value: Record<string, any>) {
+      const { title, subtitle } = value;
       return {
         title,
-        subtitle: city ? `Situată în ${city}` : "",
+        subtitle: subtitle ? `Situată în ${subtitle}` : "",
       };
     },
-  },
+  }
+  
 };
 
 export default firma;

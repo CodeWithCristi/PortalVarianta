@@ -30,7 +30,7 @@ export default function CompanyCard({ company, index }: CompanyCardProps) {
         </div>
 
         <Link 
-          href={`/firma/${company?.companySlug?.current || ''}`}
+          href={`/firme/${company?.companySlug?.current || ''}`}
           className="flex items-center justify-center gap-2 bg-transparent border border-white text-white rounded-md py-3 px-4 w-full mt-4 hover:bg-white/10 transition-colors"
         >
           Vezi Detalii Firma <Info className="w-4 h-4" />
@@ -104,7 +104,7 @@ export default function CompanyCard({ company, index }: CompanyCardProps) {
           </a>
           
           <Link 
-            href={`/firma/${company.slug?.current || ''}`}
+            href={`/firme/${company.slug?.current || ''}`}
             className="inline-flex justify-center rounded-md border border-dark px-7.5 py-3 font-medium text-dark duration-200 ease-in hover:bg-dark hover:text-white w-full"
           >
             Vezi portofoliu <ArrowRight className="w-4 h-4 ml-2" />
