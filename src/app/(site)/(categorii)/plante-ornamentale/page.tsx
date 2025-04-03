@@ -8,7 +8,7 @@ import InfoAddCompaniesBanner from "@/components/Common/InfoAddCompaniesBanner";
 const CategoriiPage = () => {
   return (
     <>
-      <Orase  />
+      <Orase url="plante-ornamentale"/>
       <InfoAddCompaniesBanner/>
     </>
   );
