@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 };
 
 const PersonalBlogPage = () => {
-  return null;
-  // return <PersonalBlog />;
+  // return null;
+  return <PersonalBlog />;
 };
 
 export default PersonalBlogPage;

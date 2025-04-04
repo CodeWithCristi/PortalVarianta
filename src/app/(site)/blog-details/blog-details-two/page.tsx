@@ -41,7 +41,7 @@ export async function generateMetadata() {
       openGraph: {
         title: `${post.title} | NextBlog`,
         description: post.metaDescription,
-        url: `${siteURL}/posts/${post?.slug?.current}`,
+        url: `${siteURL}/articole/${post?.slug?.current}`,
         siteName: "NextBlog",
         images: [
           {
@@ -133,7 +133,7 @@ const BlogDetailsTwo = async () => {
                           <p>1 min read</p>
                         </div>
                         <Link
-                          href={`/category/${post?.category}`}
+                          href={`/categorie-articole/${post?.category}`}
                           className="mb-1 inline-flex rounded-full bg-green/[0.08] px-3 py-1 text-custom-sm font-medium capitalize text-green-dark"
                         >
                           {post?.category}
@@ -222,7 +222,7 @@ const BlogDetailsTwo = async () => {
                   <Link
                     href={`${
                       posts && posts?.prevPost !== null
-                        ? `/posts/${posts?.prevPost?.slug.current}`
+                        ? `/articole/${posts?.prevPost?.slug.current}`
                         : "#/"
                     }`}
                     className="group w-1/2 rounded-l-md border-r border-gray-3 p-4 text-left duration-200 ease-in hover:bg-gray sm:p-7.5"
@@ -253,7 +253,7 @@ const BlogDetailsTwo = async () => {
                   <Link
                     href={`${
                       posts?.nextPost !== null
-                        ? `/posts/${posts?.nextPost?.slug.current}`
+                        ? `/articole/${posts?.nextPost?.slug.current}`
                         : "#/"
                     }`}
                     className="group w-1/2 rounded-r-md p-4 text-right duration-200 ease-in hover:bg-gray sm:p-7.5"

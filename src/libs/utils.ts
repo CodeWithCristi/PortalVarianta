@@ -9,7 +9,7 @@ export function generatePostDetailsLink(post: any, isLoggedin:any, isSubscribed:
     (post.accessLevel === "user" && isLoggedin) ||
     (isLoggedin && isSubscribed) ||
     post.accessLevel === "free"
-      ? `/posts/${post.slug.current}`
+      ? `/articole/${post.slug.current}`
       : !isLoggedin && post.accessLevel === "user"
       ? "/auth/signin"
       : "/pricing";

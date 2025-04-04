@@ -35,7 +35,7 @@ export async function generateMetadata() {
       openGraph: {
         title: `${post.title} | NextBlog`,
         description: post.metaDescription,
-        url: `${siteURL}/posts/${post?.slug?.current}`,
+        url: `${siteURL}/articole/${post?.slug?.current}`,
         siteName: "NextBlog",
         images: [
           {
@@ -81,7 +81,7 @@ const BlogDetailsOne = async () => {
             {integrations?.isSanityEnabled ? (
               <div className="mx-auto max-w-[770px] text-center">
                 <Link
-                  href={`/category/${post?.category}`}
+                  href={`/categorie-articole/${post?.category}`}
                   className="mb-1 inline-flex rounded-full bg-blue/[0.08] px-3 py-1 text-custom-sm font-medium capitalize text-blue"
                 >
                   {post?.category}
@@ -151,7 +151,7 @@ const BlogDetailsOne = async () => {
                 {/* <!-- Blog Show More BTN --> */}
                 <button className="mx-auto flex justify-center">
                   <Link
-                    href={`/archive`}
+                    href={`/arhiva`}
                     className="mt-10 rounded-md border border-dark px-7.5 py-3 font-medium text-dark duration-200 ease-in hover:bg-dark  hover:text-white"
                   >
                     View all Posts

@@ -1,13 +1,13 @@
 import React from "react";
 import Hero from "./hero";
 import BlogItemContainer from "./BlogItemContainer";
-import { getPostsByAuthorSlug } from "@/sanity/sanity-utils";
+import { getPosts, getPostsByAuthorSlug } from "@/sanity/sanity-utils";
 import { integrations, messages } from "../../../integrations.config";
+import { Blog } from "@/types/blog";
 
 const PersonalBlog = async () => {
-  const posts = integrations?.isSanityEnabled
-    ? await getPostsByAuthorSlug("ryna-kenter")
-    : [];
+   const posts: Blog[] = integrations?.isSanityEnabled ? await getPosts() : [];
+ 
 
   return (
     <>

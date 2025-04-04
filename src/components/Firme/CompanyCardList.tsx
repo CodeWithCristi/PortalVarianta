@@ -12,7 +12,7 @@ export default function CompanyCardList({ companies, city }: CompanyCardListProp
     return (
       <div className="text-center py-10">
         <p className="text-lg text-gray-600">
-          Nu am găsit firme de amenajări grădini în {city.charAt(0).toUpperCase() + city.slice(1)}.
+          Nu am găsit firme în {city.charAt(0).toUpperCase() + city.slice(1)}.
         </p>
       </div>
     )

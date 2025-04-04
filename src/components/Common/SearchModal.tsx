@@ -126,7 +126,7 @@ const SearchModal = ({ isModalOpen, setIsModalOpen }: PropType) => {
               >
                 <Link
                   onClick={() => setIsModalOpen(false)}
-                  href={`/posts/${post.slug.current}`}
+                  href={`/articole/${post.slug.current}`}
                 >
                   <h6 className="mb-1.5 font-medium text-dark">{post.title}</h6>
                   <p className="text-custom-sm">{post.metaDescription}</p>

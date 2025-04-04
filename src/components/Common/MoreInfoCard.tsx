@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function MedicalInfoCard() {
   return (
@@ -15,12 +16,12 @@ export default function MedicalInfoCard() {
                 În fiecare zi, echipa noastră de experți verifică și actualizează informațiile din articolele noastre,
                 astfel încât să vă puteți baza pe cele mai recente date.
               </p>
-              <button
-                type="submit"
+              <Link
+                href="/despre-noi"
                 className="flex items-center justify-center rounded-md bg-dark px-5.5 py-3.5 font-medium text-white transition-all duration-300 ease-linear hover:opacity-90"
               >
-                Citiește mai mult
-              </button>
+                Citeste mai mult
+              </Link>
             </div>
             <div className="mt-6 md:mt-0">
               <Image

@@ -8,6 +8,12 @@ const menuData: Menu[] = [
  
   },
   {
+    id: 5,
+    title: "Cauta",
+    newTab: false,
+    path: "/cauta",
+  },
+  {
     id: 2,
     title: "Profesioniști ",
     newTab: false,
@@ -71,8 +77,9 @@ const menuData: Menu[] = [
   },
 
 
+
   {
-    id: 5,
+    id: 6,
     title: "Contact",
     newTab: false,
     path: "/contact",

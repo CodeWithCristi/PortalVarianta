@@ -1,10 +1,8 @@
 import Image from "next/image"
 import FilterForm from "./FilterForm"
+import { categories, cities } from "@/utils/Constants"
 
 const Filter = () => {
-  // Listele de orașe și categorii sunt definite aici și transmise către componenta client
-  const cities = ["Bucuresti", "Cluj", "Timisoara", "Iasi", "Constanta"]
-  const categories = ["Amenajari gradini", "Intretinere gradini", "Plante ornamentale"]
 
   return (
     <section className="pb-15">

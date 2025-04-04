@@ -10,7 +10,7 @@ export default function CompanyBottomCTA() {
         {/* Left Section - Dark Background */}
         <div className="bg-dark p-6 md:w-1/3 flex flex-col items-center justify-center">
           <Link
-            href="/adauga-firma"
+            href="/inscrie-firma"
             className="flex items-center justify-center gap-2 bg-white text-dark rounded-md py-3 px-6 w-full hover:bg-gray-100 transition-colors font-medium"
           >
             Adaugă / Recomandă o firmă <Info className="w-4 h-4" />
@@ -29,20 +29,20 @@ export default function CompanyBottomCTA() {
           <div className="flex items-center gap-2">
             <CheckCircle className="text-dark w-6 h-6" />
             <span className="text-gray-700">Firmă Verificată med.ro</span>
-            <Info className="text-gray-400 w-4 h-4 cursor-help" />
+            {/* <Info className="text-gray-400 w-4 h-4 cursor-help" /> */}
           </div>
 
           <div className="flex items-center gap-2">
             <Users className="text-dark w-6 h-6" />
             <span className="text-gray-700">Specializare Principală</span>
-            <Info className="text-gray-400 w-4 h-4 cursor-help" />
+            {/* <Info className="text-gray-400 w-4 h-4 cursor-help" /> */}
           </div>
 
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             <DollarSign className="text-dark w-6 h-6" />
             <span className="text-gray-700">Cel mai bun preț</span>
             <Info className="text-gray-400 w-4 h-4 cursor-help" />
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

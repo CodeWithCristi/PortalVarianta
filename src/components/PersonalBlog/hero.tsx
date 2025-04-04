@@ -32,8 +32,8 @@ const Hero = async () => {
               <div className="flex h-[277px] w-full max-w-[277px] items-center justify-center rounded-full border border-gray-3">
                 <div className="h-[165px] w-full max-w-[165px] overflow-hidden rounded-full shadow-img">
                   <Image
-                    src={imageBuilder(author.image).url()!}
-                    alt={author.name}
+                    src="/images/icons/callcustomers.svg"
+                    alt="Garden landscaping"
                     width={165}
                     height={165}
                   />
@@ -42,16 +42,12 @@ const Hero = async () => {
 
               <div className="w-full max-w-[593px]">
                 <h1 className="mb-3.5 text-2xl text-dark sm:text-4xl lg:text-heading-3 xl:text-heading-2">
-                  Hey! I&apos;m{" "}
-                  <span className="font-bold"> {author.name}</span>
+                Găsește cele mai noi articol în amenajări grădini
                 </h1>
 
                 <div>
-                  {author.bio.map((block) => (
-                    <p key={block._key}>
-                      {block.children.map((child) => child.text).join(" ")}
-                    </p>
-                  ))}
+                <p>Alege categoria și orașul tău și contactează</p>
+                <p>Firma se va ocupa de spațiul tău verde</p>
                 </div>
 
                 {/* <!-- Social Links start --> */}

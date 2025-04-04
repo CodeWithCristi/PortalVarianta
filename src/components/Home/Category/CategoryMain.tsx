@@ -65,7 +65,7 @@ const CategoryMain = ({ posts }: { posts: Blog[] }) => {
       {/* <!-- Blog Show More BTN --> */}
       <button className="mx-auto flex justify-center ">
         <Link
-          href={"/archive"}
+          href={"/arhiva"}
           className="mt-12.5 rounded-md border border-dark px-7.5 py-3 font-medium text-dark duration-200 ease-in hover:bg-dark  hover:text-white lg:mt-17.5"
         >
           Browse all Posts

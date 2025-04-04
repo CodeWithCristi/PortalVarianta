@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Blog } from "@/types/blog";
 import { structuredAlgoliaHtmlData } from "@/libs/crawlIndex";
+import CallToAction from "@/components/Common/CallToAction";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -24,7 +25,7 @@ export async function generateMetadata(props: Props) {
       description: `${post.metaDescription?.slice(0, 136)}...`,
       author: "NextBlog",
       alternates: {
-        canonical: `${siteURL}/posts/${post?.slug?.current}`,
+        canonical: `${siteURL}/articole/${post?.slug?.current}`,
         languages: {
           "en-US": "/en-US",
           "de-DE": "/de-DE",
@@ -47,7 +48,7 @@ export async function generateMetadata(props: Props) {
       openGraph: {
         title: `${post.title} | NextBlog`,
         description: post.metaDescription,
-        url: `${siteURL}/posts/${post?.slug?.current}`,
+        url: `${siteURL}/articole/${post?.slug?.current}`,
         siteName: "NextBlog",
         images: [
           {
@@ -89,7 +90,7 @@ const BlogDetails = async (props: Props) => {
     type: "blog",
     title: post?.title || "",
     htmlString: post?.metaDescription || "",
-    pageUrl: `${process.env.SITE_URL}/posts/${post?.slug?.current}`,
+    pageUrl: `${process.env.SITE_URL}/articole/${post?.slug?.current}`,
     imageURL: imageBuilder(post?.mainImage).url()!,
   });
 
@@ -99,7 +100,7 @@ const BlogDetails = async (props: Props) => {
         <div className="mx-auto max-w-[1030px] px-4 sm:px-8 xl:px-0">
           <div className="mx-auto max-w-[770px] text-center">
             <Link
-              href={`/category/${post.category}`}
+              href={`/categorie-articole/${post.category}`}
               className="mb-1 inline-flex rounded-full bg-blue/[0.08] px-3 py-1 text-custom-sm font-medium capitalize text-blue "
             >
               {post.category}
@@ -109,7 +110,7 @@ const BlogDetails = async (props: Props) => {
             </h1>
             <p className="text-body">{post.metaDescription}</p>
 
-            <div className="mt-7.5 flex items-center justify-center gap-4">
+            {/* <div className="mt-7.5 flex items-center justify-center gap-4">
               <div className="flex h-12.5 w-12.5 overflow-hidden rounded-full">
                 <Link href={`/author/${author?.slug?.current}`}>
                   {post?.author?.image && (
@@ -142,7 +143,7 @@ const BlogDetails = async (props: Props) => {
                   <p>1 min read</p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {post?.mainImage && (
@@ -163,10 +164,10 @@ const BlogDetails = async (props: Props) => {
             {/* <!-- Blog Show More BTN --> */}
             <button className="mx-auto flex justify-center">
               <Link
-                href={`/archive`}
+                href={`/arhiva`}
                 className="mt-10 rounded-md border border-dark px-7.5 py-3 font-medium text-dark duration-200 ease-in hover:bg-dark  hover:text-white"
               >
-                View all Posts
+                Vezi toate articolele
               </Link>
             </button>
 
@@ -189,7 +190,7 @@ const BlogDetails = async (props: Props) => {
                   </Link>
                 </div>
 
-                <div>
+                {/* <div>
                   <h4 className="mb-3 text-custom-lg font-medium text-dark">
                     <Link href={`/author/${author?.slug?.current}`}>
                       {author?.name}
@@ -208,12 +209,12 @@ const BlogDetails = async (props: Props) => {
                   >
                     View profile
                   </Link>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
         </div>
-        <NewsletterSignup />
+        <CallToAction />
       </section>
     </main>
   );

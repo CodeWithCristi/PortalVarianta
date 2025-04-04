@@ -36,7 +36,7 @@ export async function generateMetadata() {
       openGraph: {
         title: `${post.title} | NextBlog`,
         description: post.metaDescription,
-        url: `${siteURL}/posts/${post?.slug?.current}`,
+        url: `${siteURL}/articole/${post?.slug?.current}`,
         siteName: "NextBlog",
         images: [
           {
@@ -139,7 +139,7 @@ const BlogDetailsThree = async () => {
                       </div>
 
                       <a
-                        href={`/category/${post?.category}`}
+                        href={`/categorie-articole/${post?.category}`}
                         className="inline-flex rounded-full bg-teal/[0.08] px-3 py-1 text-custom-sm font-medium capitalize text-teal-dark"
                       >
                         {post?.category}
@@ -303,7 +303,7 @@ const BlogDetailsThree = async () => {
                         {posts.slice(0, 3).map((post, key) => (
                           <Link
                             key={key}
-                            href={`/posts/${post.slug.current}`}
+                            href={`/articole/${post.slug.current}`}
                             className="group flex gap-6.5"
                           >
                             <div className="relative w-[80px]">
@@ -359,7 +359,7 @@ const BlogDetailsThree = async () => {
                             return (
                               <Link
                                 key={key}
-                                href={`/category/${post.category}`}
+                                href={`/categorie-articole/${post.category}`}
                                 className="group flex items-center justify-between gap-2"
                               >
                                 <p className="duration-200 ease-in group-hover:text-dark">

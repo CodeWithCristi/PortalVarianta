@@ -39,7 +39,7 @@ const SingleBlog = ({ post }: { post: Blog }) => {
             )}
           </Link>
         ) : (
-          <Link href={`/posts/${post.slug.current}`}>
+          <Link href={`/articole/${post.slug.current}`}>
             {post?.mainImage && (
               <Image
                 src={imageBuilder(post.mainImage).url()!}
@@ -95,7 +95,7 @@ const SingleBlog = ({ post }: { post: Blog }) => {
           </p>
         </div>
         <Link
-          href={`/category/${post.category}`}
+          href={`/categorie-articole/${post.category}`}
           className="inline-flex rounded-full bg-blue/[0.08] px-3 py-1 text-sm font-medium capitalize text-blue"
         >
           {post.category}
