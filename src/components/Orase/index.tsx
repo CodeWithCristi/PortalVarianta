@@ -2,13 +2,13 @@
 import React from "react";
 import Oras from "./Oras";
 import { citiesPaginaCategorii } from "@/utils/Constants";
-
+import { City } from "@/types/city";
 
 type OraseProps = {
   url: string;
+  cities: City[];
 };
-
-const Orase = ({ url }: OraseProps) => {
+const Orase = ({ url, cities }: OraseProps) => {
 
 
   return (
@@ -22,7 +22,7 @@ const Orase = ({ url }: OraseProps) => {
 
         {/* Grilă multi-coloană */}
         <div className="border-t border-b border-gray-3 py-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {citiesPaginaCategorii.map((city) => (
+          {cities.map((city:City) => (
             <Oras key={city._id} city={city} url={url} />
           ))}
         </div>

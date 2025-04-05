@@ -147,3 +147,23 @@ export async function getCityContent(city: string): Promise<CityContent> {
     next: { tags: ['cityContent'] },
   });
 }
+
+
+export async function getCitiesWithCompanies(categorie: string): Promise<{ _id: string; name: string }[]> {
+  // Interogare pentru firme de amenajari gradini
+  const query = `*[_type == "company" && categorie == ${categorie}]{ city }`;
+  const client = createClient(clientConfig);
+  const companies: Partial<Company>[] = await client.fetch(query, {});
+  
+  // Extrage orașele și filtrează valorile nule
+  const cities = companies
+    .map(company => company.city)
+    .filter(Boolean);
+
+  // Elimină duplicatele
+  const uniqueCities = Array.from(new Set(cities)).map((city, index) => ({
+    _id: String(index),
+    name: city
+  }));
+  return uniqueCities;
+}

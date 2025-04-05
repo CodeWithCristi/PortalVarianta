@@ -8,6 +8,7 @@ export interface Company {
   phoneNumber: string;
   emailAddress: string;
   city: string;
+  categorie: string;
   // Slug-ul pentru pagina de oraș (ex.: "amenajari-gradini-bucuresti")
   slug: {
     current: string;

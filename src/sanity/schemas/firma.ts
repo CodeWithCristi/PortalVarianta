@@ -1,3 +1,4 @@
+import { categoryOptions } from '@/utils/categorii_sanity';
 import { citiesOptions } from '@/utils/orase_romania_sanity';
 import { Rule } from 'sanity';
 
@@ -62,6 +63,15 @@ const firma = {
       type: "string",
       options: {
         list: citiesOptions,
+      },
+      validation: (Rule: Rule) => Rule.required(),
+    },
+    {
+      name: "categorie",
+      title: "Categorie",
+      type: "string",
+      options: {
+        list: categoryOptions,
       },
       validation: (Rule: Rule) => Rule.required(),
     },

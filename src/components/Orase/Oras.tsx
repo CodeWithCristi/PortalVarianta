@@ -1,12 +1,8 @@
 // Oras.tsx
+import { City } from "@/types/city";
 import { MapPin } from "lucide-react";
 import Link from "next/link";
 
-type City = {
-  _id: string;
-  name: string;
-  description: string;
-};
 
 type OrasProps = {
   city: City;
