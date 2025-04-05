@@ -47,8 +47,10 @@ const CompaniesByCity = async (props: Props) => {
 
   // Preluăm lista companiilor pentru oraș
   const companies: Company[] = await getCompaniesByCity(city);
+  console.log("companies...", companies)
   // Preluăm și conținutul paginii pentru oraș (documentul cityContent)
   const cityContent: CityContent = await getCityContent(city);
+  console.log("cityContent...", cityContent)
 
   return (
     <main>

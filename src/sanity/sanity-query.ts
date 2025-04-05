@@ -97,7 +97,7 @@ export const authorBySlugQuery = groq`*[_type == "author" && slug.current == $sl
 
 
 export const cityContentQueryByCity = groq`
-  *[_type == "cityContent" && city == $city][0]{
+  *[_type == "cityContent" && lower(city) == lower($city)][0]{
     city,
     body
   }
