@@ -1,3 +1,4 @@
+import { citiesOptions } from '@/utils/orase_romania_sanity';
 import { Rule } from 'sanity';
 
 const firma = {
@@ -60,14 +61,7 @@ const firma = {
       title: "Orașul",
       type: "string",
       options: {
-        list: [
-          { title: "București", value: "bucuresti" },
-          { title: "Cluj-Napoca", value: "cluj-napoca" },
-          { title: "Timișoara", value: "timisoara" },
-          { title: "Iași", value: "iasi" },
-          { title: "Constanța", value: "constanta" },
-          // adaugă aici alte orașe din România după necesitate
-        ],
+        list: citiesOptions,
       },
       validation: (Rule: Rule) => Rule.required(),
     },

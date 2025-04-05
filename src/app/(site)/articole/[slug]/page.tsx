@@ -172,7 +172,7 @@ const BlogDetails = async (props: Props) => {
             </button>
 
             {/* <!-- Author Details --> */}
-            <div className="mt-12.5 border-t border-gray-3 pb-17.5 pt-10">
+            {/* <div className="mt-12.5 border-t border-gray-3 pb-17.5 pt-10">
               <div className="flex flex-col gap-9 sm:flex-row sm:items-center">
                 <div className="flex h-[133px] w-full max-w-[133px] items-center justify-center rounded-full border border-gray-3">
                   <Link
@@ -190,7 +190,7 @@ const BlogDetails = async (props: Props) => {
                   </Link>
                 </div>
 
-                {/* <div>
+                <div>
                   <h4 className="mb-3 text-custom-lg font-medium text-dark">
                     <Link href={`/author/${author?.slug?.current}`}>
                       {author?.name}
@@ -209,13 +209,13 @@ const BlogDetails = async (props: Props) => {
                   >
                     View profile
                   </Link>
-                </div> */}
+                </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
-        <CallToAction />
       </section>
+        <CallToAction />
     </main>
   );
 };

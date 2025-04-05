@@ -2,7 +2,7 @@
 
 import RenderBodyContent from "@/components/Blog/RenderBodyContent";
 import NewsletterSignup from "@/components/Common/NewsletterSignup";
-import { getCompaniesByCity, imageBuilder } from "@/sanity/sanity-utils";
+import { getCityContent, getCompaniesByCity, imageBuilder } from "@/sanity/sanity-utils";
 import Image from "next/image";
 import Link from "next/link";
 import { Company } from "@/types/firme";
@@ -10,6 +10,7 @@ import CompanyCardList from "@/components/Firme/CompanyCardList";
 import CompanyBottomCTA from "@/components/Firme/CompanyBottomCTA";
 import CallToAction from "@/components/Common/CallToAction";
 import MoreInfoFirmePageBanner from "@/components/Common/MoreInfoFirmePageBanner";
+import { CityContent } from "@/types/cityContent";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -42,7 +43,12 @@ const CompaniesByCity = async (props: Props) => {
   const params = await props.params;
   const prefix = "amenajari-gradini-";
   const city = params.slug.startsWith(prefix) ? params.slug.replace(prefix, "") : params.slug;
+  console.log("city...", city)
+
+  // Preluăm lista companiilor pentru oraș
   const companies: Company[] = await getCompaniesByCity(city);
+  // Preluăm și conținutul paginii pentru oraș (documentul cityContent)
+  const cityContent: CityContent = await getCityContent(city);
 
   return (
     <main>
@@ -91,7 +97,7 @@ const CompaniesByCity = async (props: Props) => {
     
       </section>
       <div className="mx-auto max-w-[1030px] sm:px-8 xl:px-0 w-full h-px border-t border-gray-3"></div>
-      <MoreInfoFirmePageBanner />
+      {cityContent && <MoreInfoFirmePageBanner content={cityContent.body} />}
       <CallToAction />
     </main>
   );

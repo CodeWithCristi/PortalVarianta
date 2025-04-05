@@ -12,12 +12,14 @@ import {
   getPrevAndNextPostQuery,
   companyQueryByCity,
   companyQueryByCompanySlug,
+  cityContentQueryByCity,
 } from "./sanity-query";
 
 import { Blog } from "@/types/blog";
 import { Author } from "@/types/author";
 import { integrations } from "../../integrations.config";
 import { Company } from "@/types/firme";
+import { CityContent } from "@/types/cityContent";
 
 export async function sanityFetch<QueryResponse>({
   query,
@@ -126,6 +128,7 @@ export async function getPostsByTag(slug: string) {
 }
 
 export async function getCompaniesByCity(city: string): Promise<Company[]> {
+  console.log("city...before query", city);
   if (integrations?.isSanityEnabled) {
     const client = createClient(clientConfig);
     return client.fetch<Company[]>(companyQueryByCity, { city }, {
@@ -135,4 +138,12 @@ export async function getCompaniesByCity(city: string): Promise<Company[]> {
   } else {
     return [];
   }
+}
+
+export async function getCityContent(city: string): Promise<CityContent> {
+  const client = createClient(clientConfig);
+  return client.fetch<CityContent>(cityContentQueryByCity, { city }, {
+    cache: 'force-cache',
+    next: { tags: ['cityContent'] },
+  });
 }

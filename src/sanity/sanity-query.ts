@@ -94,3 +94,11 @@ export const getPrevAndNextPostQuery = groq`*[_type == "post" && slug.current ==
 
 export const authorQuery = groq`*[_type == "author"] ${authorData}`;
 export const authorBySlugQuery = groq`*[_type == "author" && slug.current == $slug][0] ${authorData}`;
+
+
+export const cityContentQueryByCity = groq`
+  *[_type == "cityContent" && city == $city][0]{
+    city,
+    body
+  }
+`;
