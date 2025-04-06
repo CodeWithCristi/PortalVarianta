@@ -16,6 +16,9 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
+export const revalidate = 3600; // Regenerare la fiecare 60 de minute
+
+
 export async function generateMetadata(props: Props) {
   const params = await props.params;
 

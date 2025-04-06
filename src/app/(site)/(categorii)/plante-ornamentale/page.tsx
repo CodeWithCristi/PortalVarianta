@@ -7,6 +7,8 @@ import InfoAddCompaniesBanner from "@/components/Common/InfoAddCompaniesBanner";
 import { City } from "@/types/city";
 import { getCitiesWithCompanies } from "@/sanity/sanity-utils";
 
+export const revalidate = 3600; // Regenerare la fiecare 60 de minute
+
 const PlanteOrnamentale = async () => {
     let cities = [] as City[];
     cities = await getCitiesWithCompanies("plante-ornamentale");

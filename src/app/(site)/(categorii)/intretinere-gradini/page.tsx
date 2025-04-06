@@ -6,6 +6,9 @@ import MedicalInfoCard from "@/components/Common/MoreInfoCard";
 import InfoAddCompaniesBanner from "@/components/Common/InfoAddCompaniesBanner";
 import { getCitiesWithCompanies } from "@/sanity/sanity-utils";
 import { City } from "@/types/city";
+
+export const revalidate = 3600; // Regenerare la fiecare 60 de minute
+
 const IntretinereGradini = async () => {
   let cities = [] as City[];
   cities = await getCitiesWithCompanies("intretinere-gradini");
