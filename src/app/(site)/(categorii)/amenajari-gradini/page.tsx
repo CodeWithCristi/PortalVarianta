@@ -7,7 +7,7 @@ import InfoAddCompaniesBanner from "@/components/Common/InfoAddCompaniesBanner";
 import { getCitiesWithCompanies } from "@/sanity/sanity-utils";
 import { City } from "@/types/city";
 
-export const revalidate = 60 // revalidate at most every hour
+
 const AmenajariGradini = async () => {
   let cities = [] as City[];
   cities = await getCitiesWithCompanies("amenajari-gradini");

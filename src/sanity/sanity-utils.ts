@@ -151,7 +151,7 @@ export async function getCityContent(city: string): Promise<CityContent> {
 
 export async function getCitiesWithCompanies(categorie: string): Promise<{ _id: string; name: string }[]> {
   // Interogare pentru firme de amenajari gradini
-  const query = `*[_type == "company" && Categorie == ${categorie}]{ city }`;
+  const query = `*[_type == "company" && categorie == "${categorie}"]{ city }`;
   const client = createClient(clientConfig);
   const companies: Partial<Company>[] = await client.fetch(query, {});
   
