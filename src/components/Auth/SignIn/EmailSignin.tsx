@@ -64,7 +64,7 @@ const EmailSignin = ({ handleSubmit, data, setData, loader }: any) => {
 
                 <div
                   className={`mr-2 flex h-5 w-5 items-center justify-center rounded-md border border-gray-4 ${
-                    data.checkboxToggle && "border-dark bg-dark"
+                    data.checkboxToggle && "border-dark bg-green"
                   }`}
                 >
                   <span
@@ -99,7 +99,7 @@ const EmailSignin = ({ handleSubmit, data, setData, loader }: any) => {
 
         <button
           type="submit"
-          className="flex w-full items-center justify-center rounded-md bg-dark px-5 py-3.5 font-medium text-white transition-all duration-200 hover:opacity-90"
+          className="flex w-full items-center justify-center rounded-md bg-green px-5 py-3.5 font-medium text-white transition-all duration-200 hover:opacity-90"
         >
           Sign in {loader && <Loader />}
         </button>

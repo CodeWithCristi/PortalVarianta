@@ -17,7 +17,7 @@ export default function CompanyCard({ company, index }: CompanyCardProps) {
   return (
     <div className="flex flex-col md:flex-row rounded-[10px] overflow-hidden border border-gray-200 shadow-1 mb-6">
       {/* Left Section */}
-      <div className="bg-dark text-white p-6 md:w-1/3">
+      <div className="bg-green text-white p-6 md:w-1/3">
         <h2 className="text-2xl font-bold mb-2">{company.companyName}</h2>
         <p className="mb-2">Amenajări Grădini</p>
         <div className="flex items-center mb-4">
@@ -72,23 +72,7 @@ export default function CompanyCard({ company, index }: CompanyCardProps) {
         
         </div>
 
-        <div className="mt-4">
-          <h3 className="font-medium mb-2">Servicii oferite:</h3>
-          <ul className="text-sm text-gray-600 space-y-1">
-            {company.tags && company.tags.map((tag, idx) => (
-              <li key={idx} className="flex items-center">
-                <span className="w-1.5 h-1.5 bg-dark rounded-full mr-2"></span>
-                {tag.charAt(0).toUpperCase() + tag.slice(1)}
-              </li>
-            ))}
-            {(!company.tags || company.tags.length === 0) && (
-              <li className="flex items-center">
-                <span className="w-1.5 h-1.5 bg-dark rounded-full mr-2"></span>
-                Amenajări grădini complete
-              </li>
-            )}
-          </ul>
-        </div>
+   
       </div>
 
       {/* Right Section */}
@@ -97,7 +81,7 @@ export default function CompanyCard({ company, index }: CompanyCardProps) {
         <div className="mt-6 space-y-3">
           <a 
             href={`tel:${company.phoneNumber}`}
-            className="flex items-center justify-center rounded-md bg-dark px-5.5 py-3.5 font-medium text-white transition-all duration-300 ease-linear hover:opacity-90 w-full"
+            className="flex items-center justify-center rounded-md bg-green px-5.5 py-3.5 font-medium text-white transition-all duration-300 ease-linear hover:opacity-90 w-full"
             aria-label={`Contactează ${company.companyName}`}
           >
             Contactează acum <ArrowRight className="w-4 h-4 ml-2" />
@@ -105,7 +89,7 @@ export default function CompanyCard({ company, index }: CompanyCardProps) {
           
           <Link 
             href={`/firme/${company.slug?.current || ''}`}
-            className="inline-flex justify-center rounded-md border border-dark px-7.5 py-3 font-medium text-dark duration-200 ease-in hover:bg-dark hover:text-white w-full"
+            className="inline-flex justify-center rounded-md border border-dark px-7.5 py-3 font-medium text-dark duration-200 ease-in hover:bg-green hover:text-white w-full"
           >
             Vezi portofoliu <ArrowRight className="w-4 h-4 ml-2" />
           </Link>

@@ -141,7 +141,7 @@ const BlogDetails = async (props: Props) => {
                         .slice(1)
                         .join(" ")}
                   </p>
-                  <span className="flex h-[3px] w-[3px] rounded-full bg-dark-2"></span>
+                  <span className="flex h-[3px] w-[3px] rounded-full bg-green-2"></span>
                   <p>1 min read</p>
                 </div>
               </div>
@@ -167,7 +167,7 @@ const BlogDetails = async (props: Props) => {
             <button className="mx-auto flex justify-center">
               <Link
                 href={`/arhiva`}
-                className="mt-10 rounded-md border border-dark px-7.5 py-3 font-medium text-dark duration-200 ease-in hover:bg-dark  hover:text-white"
+                className="mt-10 rounded-md border border-dark px-7.5 py-3 font-medium text-dark duration-200 ease-in hover:bg-green  hover:text-white"
               >
                 Vezi toate articolele
               </Link>

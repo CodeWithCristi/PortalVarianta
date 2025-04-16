@@ -1,4 +1,5 @@
 // types/company.ts
+
 export interface Company {
   _id: string;
   companyName: string;
@@ -22,8 +23,42 @@ export interface Company {
       _ref: string;
       _type: string;
     };
-    // Poți adăuga aici câmpuri suplimentare, cum ar fi crop sau hotspot, dacă este necesar
+    // Dacă vrei să gestionezi hotspot/crop, poți adăuga structuri opționale aici:
+    hotspot?: {
+      x: number;
+      y: number;
+      height: number;
+      width: number;
+    };
+    crop?: {
+      top: number;
+      bottom: number;
+      left: number;
+      right: number;
+    };
   };
-  body: any; // Înlocuiește "any" cu tipul specific pentru blockContent dacă ai definit unul
-  publishedAt: string; // Sau poți folosi Date, în funcție de cum gestionezi datetime-ul în proiect
+  body: any; // Înlocuiește "any" cu tipul pentru blockContent, dacă ai unul definit
+  publishedAt: string;
+
+  // --- Câmpuri noi (opționale) ---
+  whatsapp?: string; // ex.: "0712XXXXXX" sau "00407XXXXXX"
+  video?: string;    // URL video YouTube / Vimeo, etc.
+  logo?: {
+    asset: {
+      _ref: string;
+      _type: string;
+    };
+    hotspot?: {
+      x: number;
+      y: number;
+      height: number;
+      width: number;
+    };
+    crop?: {
+      top: number;
+      bottom: number;
+      left: number;
+      right: number;
+    };
+  };
 }

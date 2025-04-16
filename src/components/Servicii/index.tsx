@@ -1,10 +1,9 @@
 import React from "react";
-import ServiciuCard from "./Serviciu"; // Componenta ce afișează un serviciu individual
-import { TreeDeciduous, Wrench, Leaf } from "lucide-react"; // Importăm iconurile
 import { IServiciu } from "@/types/serviciu";
+import ServiciuCard from "./Serviciu";
 
 const Servicii: React.FC = () => {
-  // Date statice pentru servicii cu iconuri specifice
+  // Date statice pentru servicii, folosind proprietatea "image"
   const servicii: IServiciu[] = [
     {
       _id: "1",
@@ -12,7 +11,7 @@ const Servicii: React.FC = () => {
       link: "amenajari-gradini",
       description:
         "Clientii care au apelat la serviciile oferite de partenerii nostri au fost multumiti si ii vor recomanda mai departe.",
-      icon: TreeDeciduous, // Icon pentru amenajări grădini
+      image: "/images/amenajari-gradini.jpg",
     },
     {
       _id: "2",
@@ -20,7 +19,7 @@ const Servicii: React.FC = () => {
       link: "intretinere-gradini",
       description:
         "Firmele partenere isi adapteaza programul in functie de necesitatile tale si iti ofera consiliere gratuita cu privire la serviciile oferite.",
-      icon: Wrench, // Icon pentru întreținere grădini
+      image: "/images/intretinere-gradini.jpg",
     },
     {
       _id: "3",
@@ -28,7 +27,7 @@ const Servicii: React.FC = () => {
       link: "plante-ornamentale",
       description:
         "Beneficiezi de preturi avantajoase si castigi un spatiu verde pe placul tau.",
-      icon: Leaf, // Icon pentru plante ornamentale
+      image: "/images/plante-ornamentale.jpg",
     },
   ];
 
@@ -37,11 +36,11 @@ const Servicii: React.FC = () => {
       <div className="mx-auto max-w-[1170px] px-4 sm:px-8 xl:px-0">
         <div className="mb-6 flex flex-wrap items-center justify-between gap-8">
           <h2 className="text-heading-5 font-semibold text-dark">
-            Gaseste direct serviciul pe care il cauti
+          Gaseste rapid un profesionist in functie de serviciul dorit
           </h2>
         </div>
         <div className="border-t border-gray-3 pt-14">
-          <div className="grid grid-cols-1 gap-x-7.5 gap-y-11 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
             {servicii.map((serviciu) => (
               <ServiciuCard serviciu={serviciu} key={serviciu._id} />
             ))}

@@ -88,7 +88,7 @@ const ForgetPassword = () => {
 
             <button
               type="submit"
-              className="flex w-full items-center justify-center rounded-md bg-dark px-5 py-3.5 font-medium text-white transition-all duration-200 hover:opacity-90"
+              className="flex w-full items-center justify-center rounded-md bg-green px-5 py-3.5 font-medium text-white transition-all duration-200 hover:opacity-90"
             >
               Sign in {loader ? <Loader /> : null}
             </button>

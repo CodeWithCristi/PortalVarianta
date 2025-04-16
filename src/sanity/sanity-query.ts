@@ -30,6 +30,9 @@ const authorData = `{
   "numberOfPosts": count(*[_type == "post" && references(^._id)])
 }`;
 
+/**
+ * Query 1: Obține un document `company` după slug-ul orașului (ex. "amenajari-gradini-bucuresti")
+ */
 export const companyQueryBySlug = groq`
   *[_type == "company" && slug.current == $slug][0]{
     companyName,
@@ -40,10 +43,18 @@ export const companyQueryBySlug = groq`
     companySlug,
     slug,
     body,
-    city
+    city,
+    mainImage,
+    categorie,
+    whatsapp,
+    video,
+    logo
   }
 `;
 
+/**
+ * Query 2: Obține toate documentele `company` care au un anume oraș (fără diacritice, case-insensitive).
+ */
 export const companyQueryByCity = groq`
   *[_type == "company" && lower(city) == lower($city)] {
     _id,
@@ -56,10 +67,17 @@ export const companyQueryByCity = groq`
     slug,
     body,
     city,
-    mainImage
+    mainImage,
+    categorie,
+    whatsapp,
+    video,
+    logo
   }
 `;
 
+/**
+ * Query 3: Obține un document `company` după slug-ul specific numelui firmei (ex. "compania-exemplu-srl")
+ */
 export const companyQueryByCompanySlug = groq`
   *[_type == "company" && companySlug.current == $companySlug][0]{
     companyName,
@@ -68,10 +86,27 @@ export const companyQueryByCompanySlug = groq`
     phoneNumber,
     emailAddress,
     companySlug,
-    slug, // slug-ul pentru oraș, dacă ai nevoie de el
+    slug,
     body,
     city,
-    mainImage
+    mainImage,
+    categorie,
+    whatsapp,
+    video,
+    logo
+  }
+`;
+
+
+export const first8CompaniesQuery = groq`
+  *[_type == "company"] | order(_createdAt desc) [0...8] {
+    _id,
+    companyName,
+    city,
+    companySlug,
+    mainImage,
+    categorie,
+    metaDescription
   }
 `;
 

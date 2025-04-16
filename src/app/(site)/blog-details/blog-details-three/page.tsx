@@ -125,7 +125,7 @@ const BlogDetailsThree = async () => {
                             {author?.name}
                           </Link>
                         </p>
-                        <span className="flex h-[3px] w-[3px] rounded-full bg-dark-2"></span>
+                        <span className="flex h-[3px] w-[3px] rounded-full bg-green-2"></span>
                         <p className="text-custom-sm">
                           {post?.publishedAt &&
                             new Date(post.publishedAt)
@@ -134,7 +134,7 @@ const BlogDetailsThree = async () => {
                               .slice(1)
                               .join(" ")}
                         </p>
-                        <span className="flex h-[3px] w-[3px] rounded-full bg-dark-2"></span>
+                        <span className="flex h-[3px] w-[3px] rounded-full bg-green-2"></span>
                         <p className="text-custom-sm">12 min read</p>
                       </div>
 
@@ -324,7 +324,7 @@ const BlogDetailsThree = async () => {
 
                               <div className="flex items-center gap-2">
                                 <p className="text-custom-xs">{author?.name}</p>
-                                <span className="flex h-[3px] w-[3px] rounded-full bg-dark-2"></span>
+                                <span className="flex h-[3px] w-[3px] rounded-full bg-green-2"></span>
                                 <p className="text-custom-xs">
                                   {post.publishedAt &&
                                     new Date(post.publishedAt)
@@ -367,7 +367,7 @@ const BlogDetailsThree = async () => {
                                     categoryItem}
                                 </p>
 
-                                <span className="flex h-8 w-full max-w-[32px] items-center justify-center rounded-full border border-gray-3 text-custom-sm duration-200 ease-in group-hover:border-dark group-hover:bg-dark group-hover:text-white">
+                                <span className="flex h-8 w-full max-w-[32px] items-center justify-center rounded-full border border-gray-3 text-custom-sm duration-200 ease-in group-hover:border-dark group-hover:bg-green group-hover:text-white">
                                   {categoryPostCount < 10
                                     ? "0" + categoryPostCount
                                     : categoryPostCount}
@@ -396,7 +396,7 @@ const BlogDetailsThree = async () => {
                           placeholder="Enter your Email"
                           className="w-full rounded-md border border-gray-3 bg-white px-5 py-3.5 text-center outline-none placeholder:text-dark-5 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-dark-4/20"
                         />
-                        <button className="mt-4 flex w-full justify-center rounded-md bg-dark px-5 py-3 text-center font-medium text-white transition-all duration-200 hover:opacity-90">
+                        <button className="mt-4 flex w-full justify-center rounded-md bg-green px-5 py-3 text-center font-medium text-white transition-all duration-200 hover:opacity-90">
                           Subscribe Now
                         </button>
                       </form>

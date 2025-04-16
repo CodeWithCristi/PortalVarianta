@@ -83,7 +83,7 @@ const SingleBlog = ({ post }: { post: Blog }) => {
             <p className="text-sm">{post?.author?.name}</p>
           </Link>
 
-          <span className="flex h-[3px] w-[3px] rounded-full bg-dark-2"></span>
+          <span className="flex h-[3px] w-[3px] rounded-full bg-green-2"></span>
 
           <p className="text-sm">
             {post.publishedAt &&

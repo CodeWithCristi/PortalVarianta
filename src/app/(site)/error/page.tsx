@@ -30,7 +30,7 @@ const ErrorPage = () => {
           </p>
           <Link
             href="/"
-            className="inline-flex rounded-md bg-dark px-6 py-3.5 font-medium text-white duration-300 ease-in hover:opacity-95"
+            className="inline-flex rounded-md bg-green px-6 py-3.5 font-medium text-white duration-300 ease-in hover:opacity-95"
           >
             Go To Home
           </Link>

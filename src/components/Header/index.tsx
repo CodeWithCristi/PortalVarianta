@@ -82,30 +82,30 @@ const Header = () => {
               <span className="relative block h-5.5 w-5.5 cursor-pointer">
                 <span className="du-block absolute right-0 h-full w-full">
                   <span
-                    className={`relative left-0 top-0 my-1 block h-0.5 w-0 rounded-sm bg-dark delay-[0] duration-200 ease-in-out ${
+                    className={`relative left-0 top-0 my-1 block h-0.5 w-0 rounded-sm bg-green delay-[0] duration-200 ease-in-out ${
                       !navigationOpen && "!w-full delay-300"
                     }`}
                   ></span>
 
                   <span
-                    className={`relative left-0 top-0 my-1 block h-0.5 w-0 rounded-sm bg-dark delay-150 duration-200 ease-in-out ${
+                    className={`relative left-0 top-0 my-1 block h-0.5 w-0 rounded-sm bg-green delay-150 duration-200 ease-in-out ${
                       !navigationOpen && "delay-400 !w-full"
                     }`}
                   ></span>
                   <span
-                    className={`relative left-0 top-0 my-1 block h-0.5 w-0 rounded-sm bg-dark delay-200 duration-200 ease-in-out ${
+                    className={`relative left-0 top-0 my-1 block h-0.5 w-0 rounded-sm bg-green delay-200 duration-200 ease-in-out ${
                       !navigationOpen && "!w-full delay-500"
                     }`}
                   ></span>
                 </span>
                 <span className="du-block absolute right-0 h-full w-full rotate-45">
                   <span
-                    className={`absolute left-2.5 top-0 block h-full w-0.5 rounded-sm bg-dark delay-300 duration-200 ease-in-out ${
+                    className={`absolute left-2.5 top-0 block h-full w-0.5 rounded-sm bg-green delay-300 duration-200 ease-in-out ${
                       !navigationOpen && "!h-0 delay-[0]"
                     }`}
                   ></span>
                   <span
-                    className={`delay-400 absolute left-0 top-2.5 block h-0.5 w-full rounded-sm bg-dark duration-200 ease-in-out ${
+                    className={`delay-400 absolute left-0 top-2.5 block h-0.5 w-full rounded-sm bg-green duration-200 ease-in-out ${
                       !navigationOpen && "dealy-200 !h-0"
                     }`}
                   ></span>
@@ -165,7 +165,7 @@ const Header = () => {
       
                       <Link
                         href={"/inscrie-firma"}
-                        className="flex rounded-md bg-dark px-5.5 py-2.5 font-medium text-white hover:opacity-90 lg:transition-all lg:duration-200 lg:ease-linear"
+                        className="flex rounded-md bg-green px-5.5 py-2.5 font-medium text-white hover:opacity-90 lg:transition-all lg:duration-200 lg:ease-linear"
                       >
                         Înscrie firmă
                       </Link>

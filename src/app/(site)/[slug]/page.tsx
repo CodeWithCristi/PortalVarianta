@@ -79,13 +79,19 @@ const CompaniesByCity = async (props: Props) => {
                   {index + 1}.{company.companyName}
                 </h2>
                 {company.mainImage && (
-                  <Image
-                    src={imageBuilder(company.mainImage).url()!}
-                    alt={company.companyName}
-                    className="mb-11 mt-10 rounded-lg"
-                    width={1030}
-                    height={550}
-                  />
+                <Image
+                src={
+                  imageBuilder(company.mainImage)
+                    .width(1030)        // Stabilim lățimea dorită
+                    .height(580)        // Calculăm înălțimea pentru raport 16:9
+                    .auto("format")  // Convertire automată în formatul optim (ex. WebP, dacă este suportat)
+                    .url()!
+                }
+                alt={company.companyName}
+                className="mb-11 mt-10 rounded-lg object-cover"
+                width={1030}            // Atribuim lățimea finală pentru Next.js Image
+                height={580}            // Atribuim înălțimea finală pentru Next.js Image
+              />
                 )}
                 
            

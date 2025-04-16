@@ -55,7 +55,7 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
             </Link>
           </p>
 
-          <span className="flex h-[3px] w-[3px] rounded-full bg-dark-2"></span>
+          <span className="flex h-[3px] w-[3px] rounded-full bg-green-2"></span>
 
           <p className="text-sm">
             {publishedAt &&

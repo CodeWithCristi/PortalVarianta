@@ -28,7 +28,7 @@ export default function RevealPhoneButton({ fullPhone }: RevealPhoneButtonProps)
         }`}
       >
         <div className="flex items-center gap-2">
-          <Phone className="w-5 h-5 text-black" />
+          <Phone className="w-6 h-6 text-green" />
           {showFullNumber ? (
             <a href={`tel:${fullPhone}`} className="text-gray-700">
               {fullPhone}
@@ -46,7 +46,7 @@ export default function RevealPhoneButton({ fullPhone }: RevealPhoneButtonProps)
             e.stopPropagation(); // Previne propagarea click-ului la container
             setShowFullNumber(true);
           }}
-          className="rounded-l-none rounded-r-md flex items-center bg-dark px-5.5 py-2.5 font-medium text-white hover:opacity-90 transition duration-200 ease-linear"
+          className="rounded-l-none rounded-r-md flex items-center bg-green px-5.5 py-2.5 font-medium text-white hover:opacity-90 transition duration-200 ease-linear"
         >
           Vezi numărul
         </button>

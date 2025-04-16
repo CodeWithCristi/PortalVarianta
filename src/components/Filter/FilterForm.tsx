@@ -75,7 +75,7 @@ const FilterForm = ({ cities, categories }: FilterFormProps) => {
           ))}
         </select>
 
-        <button className="flex items-center rounded-md bg-dark px-5.5 py-2.5 font-medium text-white hover:opacity-90 transition-all duration-200 ease-linear">
+        <button className="flex items-center rounded-md bg-green px-5.5 py-2.5 font-medium text-white hover:opacity-90 transition-all duration-200 ease-linear">
           Caută
         </button>
       </div>

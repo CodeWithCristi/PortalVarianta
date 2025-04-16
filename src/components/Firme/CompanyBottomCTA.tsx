@@ -8,7 +8,7 @@ export default function CompanyBottomCTA() {
     <section className="my-10">
       <div className="flex flex-col md:flex-row rounded-lg overflow-hidden border border-gray-200 shadow-1">
         {/* Left Section - Dark Background */}
-        <div className="bg-dark p-6 md:w-1/3 flex flex-col items-center justify-center">
+        <div className="bg-green p-6 md:w-1/3 flex flex-col items-center justify-center">
           <Link
             href="/inscrie-firma"
             className="flex items-center justify-center gap-2 bg-white text-dark rounded-md py-3 px-6 w-full hover:bg-gray-100 transition-colors font-medium"

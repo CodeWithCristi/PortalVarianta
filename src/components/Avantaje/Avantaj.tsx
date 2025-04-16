@@ -9,7 +9,7 @@ const Avantaj = ({ author }: { author: Author }) => {
       <div className="p-5">
         <div className="flex flex-col items-center justify-center gap-4">
           <div className="flex h-[100px] w-[100px] items-center justify-center rounded-full bg-gray-200">
-            <Icon size={50} className="text-gray-500" />
+            <Icon size={80} className="text-green" />
           </div>
           <h3 className="mb-1 text-custom-xl font-semibold text-dark text-center">
             {author.name}

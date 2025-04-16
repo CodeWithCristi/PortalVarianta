@@ -30,9 +30,9 @@ const CategoryMain = ({ posts }: { posts: Blog[] }) => {
             <button
               onClick={() => setActiveCategory(categoryItem)}
               key={key}
-              className={`rounded-full border px-4.5 py-2.5 font-medium capitalize duration-200 ease-in hover:border-dark hover:bg-dark hover:text-white ${
+              className={`rounded-full border px-4.5 py-2.5 font-medium capitalize duration-200 ease-in hover:border-dark hover:bg-green hover:text-white ${
                 activeCategory === categoryItem
-                  ? "border-dark bg-dark text-white"
+                  ? "border-dark bg-green text-white"
                   : "border-gray-3 bg-gray text-dark"
               }`}
             >
@@ -66,7 +66,7 @@ const CategoryMain = ({ posts }: { posts: Blog[] }) => {
       <button className="mx-auto flex justify-center ">
         <Link
           href={"/arhiva"}
-          className="mt-12.5 rounded-md border border-dark px-7.5 py-3 font-medium text-dark duration-200 ease-in hover:bg-dark  hover:text-white lg:mt-17.5"
+          className="mt-12.5 rounded-md border border-dark px-7.5 py-3 font-medium text-dark duration-200 ease-in hover:bg-green  hover:text-white lg:mt-17.5"
         >
           Browse all Posts
         </Link>

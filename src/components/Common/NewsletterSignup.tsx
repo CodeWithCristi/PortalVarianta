@@ -88,7 +88,7 @@ const NewsletterSignup = () => {
                   </div>
                   <button
                     type="submit"
-                    className="flex items-center justify-center rounded-md bg-dark px-5.5 py-3.5 font-medium text-white transition-all duration-300 ease-linear hover:opacity-90"
+                    className="flex items-center justify-center rounded-md bg-green px-5.5 py-3.5 font-medium text-white transition-all duration-300 ease-linear hover:opacity-90"
                   >
                     Subscribe {loader && <Loader />}
                   </button>

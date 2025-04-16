@@ -13,6 +13,7 @@ import {
   companyQueryByCity,
   companyQueryByCompanySlug,
   cityContentQueryByCity,
+  first8CompaniesQuery,
 } from "./sanity-query";
 
 import { Blog } from "@/types/blog";
@@ -113,6 +114,16 @@ export async function getCompanyByCompanySlug(companySlug: string) {
     query: companyQueryByCompanySlug,
     qParams: { companySlug },
     tags: ["company"],
+  });
+  return data;
+}
+
+
+export async function getFirst8Companies(): Promise<Company[]> {
+  const data = await sanityFetch<Company[]>({
+    query: first8CompaniesQuery,
+    qParams: {},       // nu avem parametri
+    tags: ["company"], // eventual tag pentru caching
   });
   return data;
 }

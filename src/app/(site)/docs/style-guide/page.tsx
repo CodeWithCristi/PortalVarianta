@@ -431,11 +431,11 @@ const StyleGuide = () => {
           </div>
 
           <div className="flex flex-wrap items-center gap-4">
-            <button className="flex items-center rounded-md bg-dark px-5.5 py-2.5 font-medium text-white hover:opacity-90 lg:transition-all lg:duration-200 lg:ease-linear">
+            <button className="flex items-center rounded-md bg-green px-5.5 py-2.5 font-medium text-white hover:opacity-90 lg:transition-all lg:duration-200 lg:ease-linear">
               Subscribe
             </button>
 
-            <button className="rounded-full border px-4.5 py-2.5 font-medium duration-300 ease-in hover:border-dark hover:bg-dark hover:text-white">
+            <button className="rounded-full border px-4.5 py-2.5 font-medium duration-300 ease-in hover:border-dark hover:bg-green hover:text-white">
               Technology (03)
             </button>
 
@@ -486,7 +486,7 @@ const StyleGuide = () => {
               Sign in with Google
             </button>
 
-            <button className="inline-flex justify-center rounded-md border border-dark px-7.5 py-3 font-medium text-dark duration-200 ease-in hover:bg-dark hover:text-white">
+            <button className="inline-flex justify-center rounded-md border border-dark px-7.5 py-3 font-medium text-dark duration-200 ease-in hover:bg-green hover:text-white">
               Browse all Posts
             </button>
           </div>

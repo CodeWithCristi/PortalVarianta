@@ -9,6 +9,7 @@ import { Company } from "@/types/firme";
 import DetaliiFirma from "../../../../components/DetaliiFirma/DetaliiFirma";
 import { capitalizeFirstLetter } from "@/libs/utils";
 import CallToAction from "@/components/Common/CallToAction";
+import ContactForm from "@/components/DetaliiFirma/ContactForm";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -108,23 +109,44 @@ const FirmePage = async (props: Props) => {
     <main>
       <section className="pb-17.5 pt-31.5">
         <div className="mx-auto max-w-[1030px] px-4 sm:px-8 xl:px-0">
-          <div className="mx-auto max-w-[770px] text-center">
+          <div className="mx-auto max-w-[1030px] text-center">
 
-            <div className="mt-7.5 flex items-center justify-center gap-4">
+            <div className="mt-7.5 flex items-center justify-center gap-4 ">
             <DetaliiFirma company={company}/>
             </div>
           </div>
 
  
 
-          <div className="mx-auto max-w-[770px] border-t border-gray-3">
-        
+          <article className="mx-auto max-w-[770px] border-t border-gray-3">
+                {company.mainImage && (
+                        <Image
+                        src={
+                          imageBuilder(company.mainImage)
+                            .width(1030)        // Stabilim lățimea dorită
+                            .height(580)        // Calculăm înălțimea pentru raport 16:9
+                            .auto("format")  // Convertire automată în formatul optim (ex. WebP, dacă este suportat)
+                            .url()!
+                        }
+                        alt={company.companyName}
+                        className="mb-11 mt-10 rounded-lg object-cover"
+                        width={1030}            // Atribuim lățimea finală pentru Next.js Image
+                        height={580}            // Atribuim înălțimea finală pentru Next.js Image
+                      />
+                        )}
             <div className="blog-details blog-details-one pt-8">
               <RenderBodyContent company={company} />
             </div>
 
-            {/* <!-- Blog Show More BTN --> */}
-            <button className="mx-auto flex justify-center ">
+       
+
+        
+          </article>
+        </div>
+           {/* Formular de Contract sub detalii firmă */}
+      <ContactForm formId={"contact-companie"} />
+           {/* <!-- Blog Show More BTN --> */}
+           <button className="mx-auto flex justify-center ">
               <Link
                 href={`/amenajari-gradini-${company.city}`}
                 className="mt-10 rounded-md border border-dark px-7.5 py-3 font-medium text-dark duration-200 ease-in hover:bg-dark  hover:text-white"
@@ -132,10 +154,6 @@ const FirmePage = async (props: Props) => {
                 Vezi toate firmele din {capitalizeFirstLetter(company.city)}
               </Link>
             </button>
-
-        
-          </div>
-        </div>
       </section>
         <CallToAction />
     </main>

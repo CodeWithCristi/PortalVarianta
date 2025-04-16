@@ -34,7 +34,7 @@ const Avantaje = () => {
       <div className="mx-auto max-w-[1170px] px-4 sm:px-8 xl:px-0">
         <div className="mb-6 flex flex-wrap items-center justify-between gap-8">
           <h2 className="text-heading-5 font-semibold text-dark">
-            Gaseste rapid un profesionist
+          Iata de ce sa alegi profesionisti de pe portalul * nume portal *
           </h2>
         </div>
         <div className="border-t border-gray-3 pt-5">

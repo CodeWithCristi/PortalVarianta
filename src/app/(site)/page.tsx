@@ -52,8 +52,8 @@ export default function Home() {
     <>
       {/* Conținutul efectiv al paginii */}
       <Filter />
-      <Avantaje />
       <Servicii />
+      <Avantaje />
       <InfoAddCompaniesBanner />
       <CallToAction />
 

@@ -20,7 +20,7 @@ const InscrieFirma = ({ formId }: { formId: string }) => {
       <div className="mx-auto mt-40 text-center">
         <h1 className="mb-3.5 text-custom-1 font-bold text-dark">Mulțumim!</h1>
         <p>Firma ta a fost înregistrată cu succes. Vei primi detalii suplimentare pe email.</p>
-        <button className="mt-10 rounded-lg bg-dark px-6 py-3 font-medium text-white hover:opacity-90">
+        <button className="mt-10 rounded-lg bg-green px-6 py-3 font-medium text-white hover:opacity-90">
           Înapoi acasă
         </button>
       </div>
@@ -134,7 +134,7 @@ const InscrieFirma = ({ formId }: { formId: string }) => {
           </div>
           <button
             type="submit"
-            className="mt-6 flex w-full justify-center rounded-md bg-dark px-5 py-3.5 font-medium text-white transition-all duration-200 hover:opacity-90"
+            className="mt-6 flex w-full justify-center rounded-md bg-green px-5 py-3.5 font-medium text-white transition-all duration-200 hover:opacity-90"
           >
             Trimite formularul
           </button>

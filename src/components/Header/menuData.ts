@@ -42,39 +42,39 @@ const menuData: Menu[] = [
     ],
   },
 
-  {
-    id: 4,
-    title: "Despre noi",
-    newTab: false,
-    submenu: [
-      {
-        id: 301,
-        title: "Despre platforma",
-        newTab: false,
-        path: "/despre-noi",
-      },
-      {
-        id: 302,
-        title: "Cum funcționează",
-        newTab: false,
-        path: "/cum-functioneaza",
-      },
-      {
-        id: 303,
-        title: "Politica de cookie-uri",
-        newTab: false,
-        path: "/politica-de-cookie",
-      },
+  // {
+  //   id: 4,
+  //   title: "Despre noi",
+  //   newTab: false,
+  //   submenu: [
+  //     {
+  //       id: 301,
+  //       title: "Despre platforma",
+  //       newTab: false,
+  //       path: "/despre-noi",
+  //     },
+  //     {
+  //       id: 302,
+  //       title: "Cum funcționează",
+  //       newTab: false,
+  //       path: "/cum-functioneaza",
+  //     },
+  //     {
+  //       id: 303,
+  //       title: "Politica de cookie-uri",
+  //       newTab: false,
+  //       path: "/politica-de-cookie",
+  //     },
   
 
-      {
-        id: 304,
-        title: "Politica de confidențialitate",
-        newTab: false,
-        path: "/politica-de-confidentialitate",
-      },
-    ],
-  },
+  //     {
+  //       id: 304,
+  //       title: "Politica de confidențialitate",
+  //       newTab: false,
+  //       path: "/politica-de-confidentialitate",
+  //     },
+  //   ],
+  // },
 
 
 

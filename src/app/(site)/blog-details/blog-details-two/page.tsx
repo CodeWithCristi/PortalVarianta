@@ -129,7 +129,7 @@ const BlogDetailsTwo = async () => {
                                 .slice(1)
                                 .join(" ")}
                           </p>
-                          <span className="flex h-[3px] w-[3px] rounded-full bg-dark-2"></span>
+                          <span className="flex h-[3px] w-[3px] rounded-full bg-green-2"></span>
                           <p>1 min read</p>
                         </div>
                         <Link

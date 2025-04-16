@@ -18,7 +18,7 @@ export default function MedicalInfoCard() {
               </p>
               <Link
                 href="/despre-noi"
-                className="flex items-center justify-center rounded-md bg-dark px-5.5 py-3.5 font-medium text-white transition-all duration-300 ease-linear hover:opacity-90"
+                className="flex items-center justify-center rounded-md bg-green px-5.5 py-3.5 font-medium text-white transition-all duration-300 ease-linear hover:opacity-90"
               >
                 Citeste mai mult
               </Link>

@@ -1,12 +1,13 @@
-import { categoryOptions } from '@/utils/categorii_sanity';
-import { citiesOptions } from '@/utils/orase_romania_sanity';
-import { Rule } from 'sanity';
+import { categoryOptions } from "@/utils/categorii_sanity";
+import { citiesOptions } from "@/utils/orase_romania_sanity";
+import { Rule } from "sanity";
 
 const firma = {
   name: "company",
   title: "Company",
   type: "document",
   fields: [
+    // ---------------------- Fields existente ----------------------------
     {
       name: "companyName",
       title: "Numele firmei",
@@ -33,12 +34,12 @@ const firma = {
         {
           type: "string",
           validation: (Rule: any) =>
-            Rule.custom((fields: any) => {
+            Rule.custom((fields: string) => {
               if (
                 fields !== fields.toLowerCase() ||
                 fields.split(" ").includes("")
               ) {
-                return "Tags must be lowercase and not be included space";
+                return "Tags trebuie să fie toate lowercase și fără spații goale";
               }
               return true;
             }),
@@ -98,13 +99,11 @@ const firma = {
     },
     {
       name: "companySlug",
-      title: "Slug Nume Firma (Pagina agentie)",
+      title: "Slug Nume Firma (Pagina agenție)",
       type: "slug",
       options: {
-        // Folosește companyName ca sursă pentru slug
         source: (doc: any) => doc.companyName,
         unique: true,
-        // Funcția slugify: transformă în litere mici, elimină spațiile inutile și înlocuiește spațiile cu cratime
         slugify: (input: string) =>
           input
             .toLowerCase()
@@ -123,10 +122,9 @@ const firma = {
           return true;
         }),
     },
-    
     {
       name: "mainImage",
-      title: "Main image",
+      title: "Main Image",
       type: "image",
       options: {
         hotspot: true,
@@ -145,7 +143,35 @@ const firma = {
       type: "datetime",
       validation: (Rule: any) => Rule.required(),
     },
-   
+
+    // ---------------------- Câmpuri NOI ----------------------------
+    // 1) WhatsApp
+    {
+      name: "whatsapp",
+      title: "WhatsApp",
+      type: "string",
+      validation: (Rule: Rule) => Rule.optional(),
+    },
+    // 2) Video (afișat doar dacă există un link valid)
+    {
+      name: "video",
+      title: "URL Video (opțional)",
+      type: "url",
+      validation: (Rule: Rule) =>
+        Rule.uri({
+          scheme: ["http", "https"],
+        }).optional(),
+    },
+    // 3) Logo (imagine suplimentară cu dimensiuni recomandate 720 x 380)
+    {
+      name: "logo",
+      title: "Logo (720 x 380)",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+      validation: (Rule: any) => Rule.optional(),
+    },
   ],
   preview: {
     select: {
@@ -160,8 +186,7 @@ const firma = {
         subtitle: subtitle ? `Situată în ${subtitle}` : "",
       };
     },
-  }
-  
+  },
 };
 
 export default firma;

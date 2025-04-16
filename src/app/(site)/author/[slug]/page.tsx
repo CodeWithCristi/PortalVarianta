@@ -139,7 +139,7 @@ const AuthorPage = async (props: Props) => {
                 <Link
                   aria-label="link to sanity dashboard"
                   href="/admin"
-                  className="inline-block rounded-md bg-dark px-8.5 py-3 text-lg font-medium text-white hover:opacity-90"
+                  className="inline-block rounded-md bg-green px-8.5 py-3 text-lg font-medium text-white hover:opacity-90"
                 >
                   Add Some Posts
                 </Link>

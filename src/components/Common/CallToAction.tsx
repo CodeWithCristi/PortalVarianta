@@ -29,13 +29,13 @@ const CallToAction = () => {
               <div className="flex items-center gap-5">
                 <Link
                   href="/cauta"
-                  className="inline-flex justify-center rounded-md border border-dark px-7.5 py-3 font-medium text-dark duration-200 ease-in hover:bg-dark hover:text-white"
+                  className="inline-flex justify-center rounded-md border border-dark px-7.5 py-3 font-medium text-dark duration-200 ease-in hover:bg-green hover:text-white"
                 >
                   Caută firmă
                 </Link>
                 <Link
                   href="/inscrie-firma"
-                  className="flex items-center justify-center rounded-md bg-dark px-5.5 py-3.5 font-medium text-white transition-all duration-300 ease-linear hover:opacity-90"
+                  className="flex items-center justify-center rounded-md bg-green px-5.5 py-3.5 font-medium text-white transition-all duration-300 ease-linear hover:opacity-90"
                 >
                   Înscrie firmă
                 </Link>

@@ -44,7 +44,7 @@ const ManageSubscriptionButton = (subsProp: SubsButtonProp) => {
               ? "bg-primary"
               : isCanceled
                 ? "bg-primary"
-                : "bg-dark"
+                : "bg-green"
           } rounded-lg px-7  py-3 text-white hover:opacity-90`}
         >
           {!isCurrentPlan
